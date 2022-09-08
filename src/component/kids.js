@@ -85,7 +85,7 @@ export default function Kids() {
                                     <br />
                                     <button className='button' onClick={() => { myitem(i) }}>View DISCRIPTION</button>
                                     <br />
-                                    <button className='button_cart' onClick={() => { additem(v) }} >ADD CART</button>
+                                    <button className='button_cart' onClick={() => { additem(v) }} >ADD TO CART</button>
                                 </div>
                             </div>
                         )
