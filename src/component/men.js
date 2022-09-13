@@ -8,43 +8,45 @@ import { Link, useNavigate } from 'react-router-dom'
 export default function Men() {
     const [cart, setCart] = useState([])
     const [additembtn, setadditembtn] = useState(false)
+    const [newdata, setNewdata] = useState()
+
 
     const Navigate = useNavigate()
 
     let data = [{
         img: "https://www.junaidjamshed.com/media/catalog/product/j/j/jjk-sp-42301_4_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
         paragraph: "DARK GREEN SPECIAL KURTA ",
-        price: "PKR1,942.50",
+        price: 942.50,
         dis: "PKR2,590.00"
     },
     {
         img: "https://www.junaidjamshed.com/media/catalog/product/4/2/42294-1_3_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
         paragraph: "BLACK BLENDED KURTA",
-        price: "PKR2,242.50",
+        price: 242.50,
         dis: "PKR2,990.00"
     },
     {
         img: "https://www.junaidjamshed.com/media/catalog/product/4/0/40333-1_3_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
         paragraph: "LIME GREEN KURTA",
-        price: "PKR2,990.00",
+        price: 990.00,
         dis: "PKR2,590.00"
     },
     {
         img: "https://www.junaidjamshed.com/media/catalog/product/j/j/jjk-sp-42306_4_.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
         paragraph: "OFF WHITE SPECIAL KURTA",
-        price: "PKR2,790.00",
+        price: 790.00,
         dis: "PKR2,590.00"
     },
     {
         img: "https://www.junaidjamshed.com/media/wysiwyg/prince_coat.jpg",
         paragraph: "OFF WHITE SPECIAL KURTA",
-        price: "PKR2,790.00",
+        price: 790.00,
         dis: "PKR2,590.00"
     },
     {
         img: "https://www.junaidjamshed.com/media/wysiwyg/footwear_20.jpg",
         paragraph: "OFF WHITE SPECIAL KURTA",
-        price: "PKR2,790.00",
+        price: 790.00,
         dis: "PKR2,590.00"
     },]
 
@@ -58,14 +60,19 @@ export default function Men() {
     //   }
     const additem = (item) => {
         setadditembtn(true)
-        setCart([...cart, { img: item.img }])
+        setCart([...cart, { img: item.img, price: item.price, paragraph: item.paragraph }])
         swal("ADD ITEM!");
 
     }
     useEffect(() => {
         setadditembtn(false)
         localStorage.setItem('items', JSON.stringify(cart))
-        localStorage.getItem("item")
+        const oldData = JSON.parse(localStorage.getItem("items"))
+        const newarray = []
+        oldData.map((data, index) => {
+            newarray.push(data.img)
+        })
+        setNewdata(newarray)
 
 
     }, [additembtn === true])
@@ -102,7 +109,14 @@ export default function Men() {
                                     <br />
                                     <br />
                                     <button className='button' onClick={() => { myitem(i) }}>View DISCRIPTION</button><br />
-                                    <button className='button_cart' onClick={() => { additem(v) }} >ADD CART</button>
+                                    <button className='button_cart' onClick={() => { 
+                                     if (newdata.includes(v?.img)) {
+                                        swal("Already Add")
+                                      }
+                                      else {
+                                        additem(v)
+                                      }
+                                      }} >ADD CART</button>
                                 </div>
                             </div>
                         )

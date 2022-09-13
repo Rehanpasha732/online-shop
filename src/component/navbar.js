@@ -3,8 +3,7 @@ import './style.css'
 import { Link } from 'react-router-dom'
 import BasicModal  from './modal.js';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore'
 export default function Navbar() {
     return (
         <>
@@ -17,9 +16,6 @@ export default function Navbar() {
                     <li><a><Link to="/Kids">Kids</Link></a></li>
                     <li className='icon'><AttachMoneyIcon /></li>
                    <div className='icons'> <li ><BasicModal/></li></div>
-                   
-
-                 
                 </ul>  
                
             </div> 

@@ -20,7 +20,8 @@ li {
 a {
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     color: #5ece7b;
     transition: 0.3s;
 }
@@ -37,38 +38,44 @@ a:hover{
     /* width: -300px; */
     /* padding-left: -200px; */
 }
+
 /* modal styling */
 .modal_img {
     width: 80px;
     margin-left: 50px;
 }
-.modal_box{
+
+.modal_box {
     border-bottom: 1px solid black;
     overflow: scroll;
-    
-}
-.prize{
-    margin-left: 43px;
-}
-.sizes{
-    margin: 5px;
-    margin-left: 50px;
+
 }
 
-.size{
+.prize {
+    margin-left: 43px;
+}
+
+.sizes {
+    margin: 5px;
+    /* margin-left: 50px; */
+}
+
+.size {
     padding: 5px;
     background-color: #000;
     color: #fff;
     margin: 2px;
 }
-.size:hover{
+
+.size:hover {
     background-color: #fff;
     color: #232323;
     border: 1px solid black;
     cursor: pointer;
     transition: 0.5s;
 }
-.color_red{
+
+.color_red {
     background-color: rgb(231, 20, 20);
     width: 30px;
     padding: 5px;
@@ -76,7 +83,8 @@ a:hover{
     color: #fff;
 
 }
-.color_green{
+
+.color_green {
     background-color: rgb(69, 231, 20);
     width: 30px;
     padding: 5px;
@@ -84,50 +92,37 @@ a:hover{
     color: #fff;
 
 }
-.color_blue{
+
+.color_blue {
     background-color: rgb(20, 41, 231);
     color: #fff;
     width: 30px;
     padding: 5px;
     font-size: 10px;
 }
-.color_red :hover{
+
+.color_red :hover {
     cursor: pointer;
     background-color: rgb(255, 0, 0);
     transition: 0.4s;
 }
-.color_green:hover{
+
+.color_green:hover {
     cursor: pointer;
     background-color: rgb(30, 255, 0);
     transition: 0.4s;
 }
-.color_blue:hover{
+
+.color_blue:hover {
     cursor: pointer;
     background-color: rgb(17, 0, 255);
     transition: 0.4s;
 }
-.counter {
-    /* background-color: #5ece7b; */
-    width: 70px;
-    margin: 5px;
-    margin-left:60px;
-    margin-top: 10px;
-}
 
-.amount {
-    padding: 22px;
-}
 
-.btn {
-    margin: 10px 1px;
-    border: none;
-    padding-left: 5px;
-
-}
-
-.btn:hover{
+/* .btn:hover{
     cursor: pointer;
-}
+} */
 li:hover {
     /* color: #5ece7b !important;
     transition: 0.5;
@@ -206,6 +201,7 @@ li:hover {
 .box_text {
     padding: 10px;
 }
+
 .button {
     padding: 10px;
     border: 2px solid black;
@@ -214,12 +210,14 @@ li:hover {
     margin-left: 30px;
 
 }
-.button_cart{
+
+.button_cart {
     padding: 5px;
     margin-left: 60px;
     margin-top: 10px;
 }
-.button_cart:hover{
+
+.button_cart:hover {
     background-color: #5ece7b;
     color: #000;
     border: none;
@@ -227,6 +225,7 @@ li:hover {
     color: #fff;
     cursor: pointer;
 }
+
 .button:hover {
     background-color: #5ece7b;
     color: #000;
@@ -237,27 +236,32 @@ li:hover {
 }
 
 /* bags */
-.main_bags_section{
+.main_bags_section {
     display: flex;
 }
-.bags_img{
+
+.bags_img {
     width: 50px;
-    margin: 50px ;
+    margin: 50px;
     margin-bottom: -40px;
 }
-.bags_img_full{
+
+.bags_img_full {
     width: 300px;
 }
-.bags_img_full:hover{
+
+.bags_img_full:hover {
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     transition: 0.10s;
     cursor: pointer;
 }
-.section{
+
+.section {
     display: flex;
     justify-content: space-evenly;
 }
-.bags_sizes_data{
+
+.bags_sizes_data {
     padding: 5px;
     background-color: #fff;
     color: #000;
@@ -266,67 +270,110 @@ li:hover {
     font-size: 20px;
 
 }
-.bags_sizes_data:hover{
+
+.bags_sizes_data:hover {
     background-color: #000;
     color: #fff;
     transition: 0.4s;
     cursor: pointer;
 }
-.bags_sizes_data_red{
+
+.bags_sizes_data_red {
     background-color: crimson;
     padding: 10px;
     margin-right: 10px;
 }
-.bags_sizes_data_green{
+
+.bags_sizes_data_green {
     background-color: rgb(143, 220, 20);
     padding: 10px;
     margin-right: 10px;
 }
-.bags_sizes_data_green:hover{
+
+.bags_sizes_data_green:hover {
     background-color: rgb(150, 238, 10);
     padding: 10px;
     margin-right: 10px;
     cursor: pointer;
 }
-.bags_sizes_data_blue{
+
+.bags_sizes_data_blue {
     background-color: rgb(20, 57, 220);
     padding: 10px;
     margin-right: 10px;
 }
-.bags_sizes_data_blue:hover{
+
+.bags_sizes_data_blue:hover {
     cursor: pointer;
     background-color: rgb(18, 76, 236);
     transition: 0.4s;
 }
-.bags_sizes_data_red:hover{
+
+.bags_sizes_data_red:hover {
     cursor: pointer;
     background-color: rgb(255, 0, 0);
     transition: 0.4s;
 }
-.sizes{
+
+.sizes {
     /* background-color: #5ece7b; */
     margin-left: 0px;
 }
-.color{
+
+.color {
     margin-right: 10px;
-    
+
 }
-.main_cart_section{
+
+.main_cart_section {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 30px;
 }
-.cart_img img{
-    width: 200px; 
+
+.cart_img img {
+    width: 200px;
 }
-.cart_btn{
+
+.price_text {
+    width: 100px;
+    margin-left: 40px;
+}
+
+.paragraph_modal {
+    margin-top: 30px;
+     margin-left: 30px;
+}
+.img_modal{
+    width: 80px;
+     margin-left: 50px
+}
+.cart_btn {
     background-color: #232323;
     color: #fff;
     height: 30px;
     padding: 5px;
     width: 10px;
 }
-.cart_btn:hover{
-    cursor: pointer;
+
+.counter {
+    /* background-color: aqua; */
+    height: 50px;
+    padding: 20px;
+    /* margin-left: -20px; */
+}
+
+.count {
+    /* background-color: blue; */
+    padding: 10px;
+
+
+}
+
+.badge {
+    width: '10px';
+    margin-left: '90%';
+    margin-top: '-30px';
+    background-color: 'white';
 }

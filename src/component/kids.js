@@ -6,6 +6,8 @@ import { Link, useNavigate } from 'react-router-dom'
 export default function Kids() {
     const [cart, setCart] = useState([])
     const [additembtn, setadditembtn] = useState(false)
+    const [newdata, setNewdata] = useState()
+
 
     const Navigate = useNavigate()
     let data = [{
@@ -46,14 +48,18 @@ export default function Kids() {
     },]
     const additem = (item) => {
         setadditembtn(true)
-        setCart([...cart, { img: item.img }])
+        setCart([...cart, { img: item.img, price: item.price, paragraph: item.paragraph }])
         swal("ADD ITEM!");
-
     }
     useEffect(() => {
         setadditembtn(false)
         localStorage.setItem('items', JSON.stringify(cart))
-
+        const oldData = JSON.parse(localStorage.getItem("items"))
+        const newarray = []
+        oldData.map((data, index) => {
+            newarray.push(data.img)
+        })
+        setNewdata(newarray)
     }, [additembtn === true])
     const myitem = (index) => {
 
@@ -85,7 +91,14 @@ export default function Kids() {
                                     <br />
                                     <button className='button' onClick={() => { myitem(i) }}>View DISCRIPTION</button>
                                     <br />
-                                    <button className='button_cart' onClick={() => { additem(v) }} >ADD TO CART</button>
+                                    <button className='button_cart' onClick={() => {
+                                        if (newdata.includes(v?.img)) {
+                                            swal("Already Add")
+                                        }
+                                        else {
+                                            additem(v)
+                                        }
+                                    }} >ADD TO CART</button>
                                 </div>
                             </div>
                         )
