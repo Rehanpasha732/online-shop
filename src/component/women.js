@@ -5,7 +5,6 @@ import Bags from './bags.js'
 import swal from 'sweetalert';
 import { Link, useNavigate } from 'react-router-dom'
 import Item from 'antd/lib/list/Item'
-import { RED } from "../../src/utils/color"
 import Loader from './loader';
 export default function Women() {
   const [cart, setCart] = useState([])
@@ -111,7 +110,7 @@ export default function Women() {
                   <del className='price'>{v.dis}</del><br /><br />
                 </div>
                 <br />
-                <button className='button_cart' style={{ color: RED }} onClick={() => {
+                <button className='button_cart' onClick={() => {
                   if (newdata.includes(v?.img)) {
                   }
                   else {

@@ -67,6 +67,7 @@ export default function Men() {
     useEffect(() => {
         setadditembtn(false)
         localStorage.setItem('items', JSON.stringify(cart))
+        
         const oldData = JSON.parse(localStorage.getItem("items"))
         const newarray = []
         oldData.map((data, index) => {

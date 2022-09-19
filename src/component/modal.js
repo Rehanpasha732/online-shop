@@ -10,7 +10,6 @@ import Badge from '@mui/material/Badge';
 
 import './style.css'
 import { Link } from 'react-router-dom';
-import { BLACK } from "../../src/utils/color"
 
 const style = {
     position: 'absolute',
@@ -30,13 +29,13 @@ export default function BasicModal() {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const getitem = JSON.parse(localStorage.getItem('items'))
-    console.log('getitem===>', getitem)
+    // console.log('getitem===>', getitem)
     return (
         <div>
             <Button className="badge" style={{ width: '10px', marginLeft: '90%', margintop: '-30px', backgroundColor: 'white' }} onClick={handleOpen}><span className='icons'>
-                <Badge badgeContent={getitem.length} max="9" color="primary">
-                </Badge>
-                <LocalGroceryStoreIcon style={{ color: BLACK, width: '40px', marginTop: '-0px' }} /></span>
+                {/* <Badge badgeContent={getitem.length} max="9" color="primary">
+                </Badge> */}
+                <LocalGroceryStoreIcon style={{ width: '40px', marginTop: '-0px' }} /></span>
             </Button>
             <Modal
                 open={open}
@@ -46,7 +45,7 @@ export default function BasicModal() {
                 <Box style={{ overflow: 'scroll', height: '300px' }} className="modal_box" sx={style}>
                     <div className="modal_text">
                         <Typography id="modal-modal-title" variant="h6" component="h2">
-                            <b className='prize'> My BAG</b> <br />
+                            <b className='prize'>BAG</b> <br />
                         </Typography>
                     </div>
                     <Typography>
@@ -81,7 +80,7 @@ export default function BasicModal() {
                             getitem?.length === 0 ?
                                 <h3 style={{ margin: "20px" }}>Your Bag is Empty</h3>
                                 :
-                                <Link to='/cart'> <button style={{ marginTop: "30px" }}>View Bag</button></Link>
+                                <Link to='/cart'> <button style={{ marginTop: "70px" }}>View Bag</button></Link>
                         }
 
                     </Typography>

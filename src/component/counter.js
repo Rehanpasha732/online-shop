@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 export default function Counter(props) {
-    const [count, setCount] = useState(0)
-    const [plus, setPlus] = useState(0)
-    const [total, setTotal] = useState(0)
+    const [count, setCount] = useState(1)
     const item = JSON.parse(localStorage.getItem("items"))
+    var amount = item[props.index].price
+    const [plus, setPlus] = useState(amount)
+    const [total, setTotal] = useState(0)
+
     // console.log(item)
     // console.log('parseInt(item[props.index].price)', (item[props.index].price))
-    var amount = item[props.index].price
+
     // console.log('amount', (amount))
     // console.log('Amount', amount)
     function add() {
@@ -21,7 +23,7 @@ export default function Counter(props) {
         setCount(count - 1)
         setPlus(plus - amount)
     }
-   
+
 
     return (
         <>
