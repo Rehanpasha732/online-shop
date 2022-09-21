@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {Link, useNavigate } from 'react-router-dom'
 import UploadApp from './upload.js'
+import swal from 'sweetalert'
 
 import './style.css'
 
@@ -13,19 +14,19 @@ const Signup = () => {
     const Navigate = useNavigate()
     const sign = () => {
         if (name === "" || email === "" || password === "") {
-            alert("fill the vlaue")
-            setName('')
-            setEmail('')
-            setPassword('')
+            swal(" please Fill the vlaue😊")
+            // setName('')
+            // setEmail('')
+            // setPassword('')
 
         }
 
         else if (!regEx.test(email)) {
 
-            alert("email is invalid")
-            setName('')
-            setEmail('')
-            setPassword('')
+            swal( "Email invalid");
+            // setName('')
+            // setEmail('')
+            // setPassword('')
         }
         else {
             localStorage.setItem("name", name)
@@ -35,6 +36,7 @@ const Signup = () => {
             setEmail('')
             setPassword('')
             Navigate('/Login')
+            swal("Signup")
 
         }
     }

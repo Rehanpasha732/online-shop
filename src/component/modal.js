@@ -6,35 +6,34 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import Badge from '@mui/material/Badge';
-// import MailIcon from '@mui/icons-material/Mail';
 
 import './style.css'
 import { Link } from 'react-router-dom';
-
 const style = {
     position: 'absolute',
     top: '50%',
     left: '80%',
     transform: 'translate(-50%, -50%)',
     width: 200,
-
     bgcolor: 'background.paper',
     border: '2px solid #888',
     boxShadow: 24,
     p: 4,
 };
-
 export default function BasicModal() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const getitem = JSON.parse(localStorage.getItem('items'))
     // console.log('getitem===>', getitem)
+    const check = () => {
+        setOpen(false)
+    }
     return (
         <div>
             <Button className="badge" style={{ width: '10px', marginLeft: '90%', margintop: '-30px', backgroundColor: 'white' }} onClick={handleOpen}><span className='icons'>
-                {/* <Badge badgeContent={getitem.length} max="9" color="primary">
-                </Badge> */}
+                <Badge badgeContent={getitem.length} max="9" color="primary">
+                </Badge>
                 <LocalGroceryStoreIcon style={{ width: '40px', marginTop: '-0px' }} /></span>
             </Button>
             <Modal
@@ -53,25 +52,24 @@ export default function BasicModal() {
                             getitem?.map((v, i) => {
                                 return (
                                     <>
-                                        <h4 className='paragraph_modal'>{[v.paragraph]}</h4>
+                                        <h6 style={{ marginTop: '70px' }} className='paragraph_modal'>{[v.paragraph]}</h6>
                                         <img className='img_modal' src={[v.img]} />
                                         <p className='price_text'>{[v.price]}</p>
                                         <div className="counter">
                                             <center>
-                                            <b >Size</b>
-                                            <div className="sizes">
-                                                <span className='size'>S</span>
-                                                <span className='size'>M</span>
-                                                <span className='size'>xs</span>
-                                            </div>
-                                            <b >Color</b>
-                                            <div className="color" >
-                                                <span className='color_red'>Red</span>
-                                                <span className='color_green'>Green</span>
-                                                <span className='color_blue'>Blue</span>
-                                            </div></center>
+                                                <b >Size</b>
+                                                <div className="sizes">
+                                                    <span className='size'>S</span>
+                                                    <span className='size'>M</span>
+                                                    <span className='size'>xs</span>
+                                                </div>
+                                                <b >Color</b>
+                                                <div className="color" >
+                                                    <span className='color_red'>Red</span>
+                                                    <span className='color_green'>Green</span>
+                                                    <span className='color_blue'>Blue</span>
+                                                </div></center>
                                         </div>  <br />
-                                      
                                     </>
                                 )
                             })
@@ -80,9 +78,14 @@ export default function BasicModal() {
                             getitem?.length === 0 ?
                                 <h3 style={{ margin: "20px" }}>Your Bag is Empty</h3>
                                 :
-                                <Link to='/cart'> <button style={{ marginTop: "70px" }}>View Bag</button></Link>
+                                <Link to='/cart'> <button style={{ marginTop: "70px", marginRight: '30px' }} className='pdf_btn'>View Bag</button></Link>
                         }
-
+                        {
+                            getitem?.length === 0 ?
+                                <button style={{ display: 'none' }} className='pdf_btn'>Check Out</button>
+                                :
+                                <button onClick={check} style={{}} className='pdf_btn'>Check Out</button>
+                        }
                     </Typography>
                     <br />
                     <hr />

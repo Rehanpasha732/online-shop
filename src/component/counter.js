@@ -7,16 +7,9 @@ export default function Counter(props) {
     var amount = item[props.index].price
     const [plus, setPlus] = useState(amount)
     const [total, setTotal] = useState(0)
-
-    // console.log(item)
-    // console.log('parseInt(item[props.index].price)', (item[props.index].price))
-
-    // console.log('amount', (amount))
-    // console.log('Amount', amount)
     function add() {
         setCount(count + 1)
         setPlus(amount + plus)
-        // setTotal(count + amount)
 
     }
     function sub() {

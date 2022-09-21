@@ -89,9 +89,9 @@ export default function Kids() {
                                     <del className='price'>{v.dis}</del>
                                     <br />
                                     <br />
-                                    <button className='button' onClick={() => { myitem(i) }}>View DISCRIPTION</button>
+                                    {/* <button className='button' onClick={() => { myitem(i) }}>View DISCRIPTION</button> */}
                                     <br />
-                                    <button className='button_cart' onClick={() => {
+                                    <button  style={{marginRight:'40px'}} className='button_cart' onClick={() => {
                                         if (newdata.includes(v?.img)) {
                                             swal("Already Add")
                                         }

@@ -109,7 +109,7 @@ export default function Men() {
                                     <del className='price'>{v.dis}</del>
                                     <br />
                                     <br />
-                                    <button className='button' onClick={() => { myitem(i) }}>View DISCRIPTION</button><br />
+                                    {/* <button className='button' onClick={() => { myitem(i) }}>View DISCRIPTION</button><br /> */}
                                     <button className='button_cart' onClick={() => { 
                                      if (newdata.includes(v?.img)) {
                                         swal("Already Add")

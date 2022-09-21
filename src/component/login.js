@@ -1,5 +1,6 @@
 import React, { Link, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import swal from 'sweetalert'
 
 import './style.css'
 
@@ -12,7 +13,7 @@ const Login = () => {
 
     const login = () => {
         if (name === "" || email === "" || password === "") {
-            alert("fill the vlaue")
+            swal("fill the vlaue")
             setName('')
             setEmail('')
             setPassword('')
@@ -20,14 +21,14 @@ const Login = () => {
         }
 
         if (email != localStorage.getItem("email") || name === "" || email === "") {
-            alert(" email not found")
+            swal(" email not found")
         }
         else if (password != localStorage.getItem("password")) {
-            alert(" incorrect password")
+            swal(" incorrect password")
         }
 
-        else if (name != localStorage.getItem("name")){
-            alert("incorrect Name")
+        else if (name != localStorage.getItem("name")) {
+            swal("incorrect Name")
         }
         else {
             localStorage.setItem("name", name)
@@ -38,7 +39,7 @@ const Login = () => {
             setPassword('')
             Navigate('/shop')
 
-            alert('LOGIN')
+            swal('LOGIN welcome' + ' ' + name)
 
         }
     }
@@ -47,8 +48,12 @@ const Login = () => {
     return (
         <>
             <div className="main_signup">
+               
                 <div style={{ marginLeft: '10%' }} className="section">
+ <div className="form_img">
+                    <img src='https://img.freepik.com/premium-vector/woman-shopping-ecommerce-store_670881-8.jpg' className="img" />
 
+                </div>
                     <div className="text">
                         <h1 className='heading'>Login</h1>
                         <p className='lorem_para'>Lorem ipsum dolor sit amet consectetur<br />  adipisicing </p>
@@ -56,16 +61,13 @@ const Login = () => {
                             <input className='input_1' type="text" value={name} onChange={e => setName(e.target.value)} placeholder='Enter Your User Name' /><br />
                             <input className='input_2' placeholder='Enter Email' type="email" value={email} onChange={e => setEmail(e.target.value)} /><br />
                             <input className='input_3' type="password" placeholder='Enter Password' value={password} onChange={e => setPassword(e.target.value)} />
-                            <div className='login_btn'onClick={login} >Login</div>
+                            <div className='login_btn' onClick={login} >Login</div>
 
                         </div>
 
 
                     </div>
-                    <div className="form_img">
-                        <img src='https://img.freepik.com/premium-vector/woman-shopping-ecommerce-store_670881-8.jpg' className="img" />
 
-                    </div>
                 </div>
 
             </div>

@@ -9,10 +9,10 @@ export default function Navbar() {
     return (
         <>
             <div classNameName="main_Section">
-                <div classNameName="navbar">
-                    <nav className="navbar navbar-expand-lg bg-light">
+                <div  classNameName="navbar">
+                    <nav className="navbar navbar-expand-lg ">
                         <div className="container-fluid">
-                           
+
 
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
@@ -20,30 +20,29 @@ export default function Navbar() {
                             <div className="collapse navbar-collapse" id="navbarNav">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                         <li> <a><Link to="/Shop" >Home</Link></a></li>
+                                        <li> <a><Link to="/Shop" style={{ color: 'black' }}>Home</Link></a></li>
                                     </li>
                                     <li className="nav-item">
-                                        <li><a><Link to="/Women" >Women</Link></a></li>
+                                        <li><a><Link to="/Women" style={{ color: 'black' }} >Women</Link></a></li>
 
                                     </li>
                                     <li className="nav-item">
-                                        <li><a><Link to="/Men">Men</Link></a></li>
+                                        <li><a><Link to="/Men" style={{ color: 'black' }}>Men</Link></a></li>
 
                                     </li>
                                     <li className="nav-item">
-                                        <li><a><Link to="/Kids">Kids</Link></a></li>
+                                        <li><a><Link to="/Kids" style={{ color: 'black' }}>Kids</Link></a></li>
 
                                     </li>
                                     <li className="nav-item">
                                         <Profile />
                                     </li>
-                                    <li className="nav-item">
-                                        <BasicModal />
-                                    </li>
+                                    <div className="shop_icon">
+                                        <BasicModal style={{ color: 'black'}} />
+                                    </div>
                                 </ul>
 
                             </div>
-
 
                         </div>
                     </nav>

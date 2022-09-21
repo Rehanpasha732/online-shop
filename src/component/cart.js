@@ -4,7 +4,6 @@ import Counter from './counter.js'
 import Navbar from './navbar.js'
 import PDF from './pdf.js'
 import './style.css'
-
 export default function Cart() {
   const [show, setShow] = useState('hide')
   const getitem = JSON.parse(localStorage.getItem('items'))
@@ -35,8 +34,8 @@ export default function Cart() {
   return (
     <>
       <Navbar />
-      <div className="cart_section" style={{ marginLeft: '100px', marginRight: '100px' }}>
-        <div className="cart_heading" ><h1>Cart</h1></div><br /><br /><hr />
+      <div className="cart_section" style={{ marginLeft: '10px' }}><br /><br />
+        <div className="cart_heading" ><h1>Cart</h1></div><hr />
         <div className="cart_section_data">
           <div className="cart_text">
           </div>
@@ -60,51 +59,36 @@ export default function Cart() {
                           <span className='color_green'>Green</span>
                           <span className='color_blue'>Blue</span>
                           <Counter index={i} />
-
                         </div>
                       </div>
                       <div className="cart_img">
                         <img src={[v.img]} />
                       </div>
-
-
                     </div>
                     <hr />
                   </>
                 )
-
               })
             }
-            {/* <center>
-              {show !== 'show' ? <>
-                <button className='pdf_btn' onClick={showBtn}>Show PDF</button>
-                <button className='pdf_btn' style={{ display: 'none' }}>Hide</button>
-
-              </>
-                :
-                <>
-                  <button className='pdf_btn' style={{ display: 'none' }}>Show PDF</button>
-                  <button className='pdf_btn' onClick={hideBtn}>Hide</button>
-                </>
-              }
-            </center> */}
             {show !== 'show' ?
-              <PDFViewer style={{ display: 'none',marginTop:'30px' }}>
+              <PDFViewer style={{ display: 'none', marginTop: '30px' }}>
                 <PDF />
               </PDFViewer> :
-              <center> <PDFViewer style={{ height: '300px', width: '300px' }}>
+               <PDFViewer style={{ height: '300px', width: '300px' }}>
                 <PDF />
-              </PDFViewer></center>
+              </PDFViewer>
             }
             <br />
             <br />
             <PDFDownloadLink document={<PDF />} fileName="Bag">
-              {({ loading }) => (loading ? <button className='pdf_btn'>Downloding</button> : <center>
+
+              {({ loading }) => (loading ? <button style={{display:'none'}} className='pdf_btn'>.....</button> : 
                 <button className='pdf_btn'>Downlod </button>
-              </center>)}
+             )}
             </PDFDownloadLink>
             <center>
-              {show !== 'show' ? <>
+              {/* {show !== 'show' ? 
+              <>
                 <button className='pdf_btn' onClick={showBtn}>Show PDF</button>
                 <button className='pdf_btn' style={{ display: 'none' }}>Hide</button>
 
@@ -114,7 +98,7 @@ export default function Cart() {
                   <button className='pdf_btn' style={{ display: 'none' }}>Show PDF</button>
                   <button className='pdf_btn' onClick={hideBtn}>Hide</button>
                 </>
-              }
+              } */}
             </center>
           </div>
         </div>
